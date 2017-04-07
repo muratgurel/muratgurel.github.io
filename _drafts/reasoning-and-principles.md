@@ -14,6 +14,7 @@ To achieve these, I'm trying to follow the approaches below:
 
 - *Reduce unity dependency as much as possible:* Besides all that Unity is good or bad discussion, there are disadvantages to depending on Unity heavily.
   - Multiple programmers working simultaneously may result in merge conflicts more often for unity scenes & prefabs. So for example keeping the data in JSON files rather than on components via Editor allows me to leave the Unity scene untouched most of the time for changes other than UI or view related stuff.
+  - Keeping logic & data in code and not scattered between scene and code.
   - Keeping data in JSON files also allows designers to work on Excel sheets, or anything, for game configurations and content rather than going through a Unity scene to change variables. You or even they can easily export the data to a JSON file and put it in the project. It also allows the data to be easily overwritten, by a remote server for example.
   - Deterministic execution order. Rather than depending on unity's lifecycle and implementation details, there is a clear, easily followable execution order for your game logic.
   - Single point of entry. By not depending on Awake, Start in everything but having a single entry point and than propagating everything from there, you can easily insert/remove new functionality in between steps. This also feeds back into deterministic execution order.
